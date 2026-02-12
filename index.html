@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Prelume</title>
+    <style>
+        :root {
+            --bg: #F5F0EB;
+            --card-bg: #EDE7E0;
+            --accent: #B87B5E;
+            --text-primary: #3D3531;
+            --text-secondary: #8A7E77;
+            --divider: #DBD4CC;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #2C2725;
+                --card-bg: #3A3432;
+                --accent: #A8826E;
+                --text-primary: #E8E0DA;
+                --text-secondary: #9A8E87;
+                --divider: #4A4340;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .brand {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .effective-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        li strong {
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--divider);
+            margin: 48px 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--divider);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">Prelume</div>
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective date: February 12, 2026</p>
+
+        <p>Prelume ("we", "our", or "the app") is an iOS AI coaching platform that connects creators with users through personalized coaching experiences. This Privacy Policy explains what information we collect, how we use it, and your choices.</p>
+
+        <div class="card">
+            <p>We value your privacy and collect only what is necessary to deliver the coaching experience. We never sell your personal data.</p>
+        </div>
+
+        <h2>1. Information We Collect</h2>
+
+        <p><strong>Account Information</strong></p>
+        <ul>
+            <li>Email address and authentication credentials (managed via Supabase)</li>
+            <li>Display name (if provided)</li>
+        </ul>
+
+        <p><strong>Coaching & Chat Data</strong></p>
+        <ul>
+            <li>Messages you send during coaching sessions</li>
+            <li>AI-generated responses and coaching reports</li>
+            <li>Session history and continuity data</li>
+        </ul>
+
+        <p><strong>Subscription Data</strong></p>
+        <ul>
+            <li>Subscription status, plan type, and renewal dates (managed via RevenueCat)</li>
+            <li>Redemption code usage for creator-sold coaching products</li>
+            <li>We do not store or process payment card details directly; all payment processing is handled by Apple via In-App Purchases and RevenueCat</li>
+        </ul>
+
+        <p><strong>Usage & Analytics Data</strong></p>
+        <ul>
+            <li>App usage patterns, feature interactions, and session frequency (collected via Amplitude)</li>
+            <li>Device type, OS version, and app version</li>
+            <li>Crash logs and performance data</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <ul>
+            <li><strong>Deliver coaching:</strong> Your messages are sent to OpenAI's API to generate personalized AI coaching responses. Session history is retained to provide continuity across conversations.</li>
+            <li><strong>Manage your account:</strong> Authentication and account management through Supabase.</li>
+            <li><strong>Process subscriptions:</strong> RevenueCat manages subscription status so you can access Prelume+ features.</li>
+            <li><strong>Improve the app:</strong> Amplitude analytics help us understand how the app is used and where to improve.</li>
+            <li><strong>Generate reports:</strong> Coaching session data is used to create personalized progress reports.</li>
+        </ul>
+
+        <h2>3. Third-Party Services</h2>
+        <p>We rely on the following third-party services to operate Prelume. Each has its own privacy policy governing how they handle data:</p>
+
+        <ul>
+            <li><strong>Supabase</strong> &mdash; Authentication and data storage. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><strong>OpenAI</strong> &mdash; AI coaching responses. Chat messages are sent to OpenAI's API for processing. OpenAI's API data usage policy applies. <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><strong>RevenueCat</strong> &mdash; Subscription management. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><strong>Amplitude</strong> &mdash; Product analytics. <a href="https://amplitude.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><strong>Apple</strong> &mdash; In-App Purchase payment processing and App Store distribution. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+        </ul>
+
+        <h2>4. Creator IP Protection</h2>
+        <p>Coaching products created by third-party creators contain proprietary instructions. These instructions are never exposed to users &mdash; they cannot be viewed, edited, exported, or shared. Creator coaching IP is stored securely and only used server-side to generate AI responses.</p>
+
+        <h2>5. Data Retention</h2>
+        <ul>
+            <li><strong>Chat history and reports</strong> are retained for the duration of your account to provide session continuity.</li>
+            <li><strong>Account data</strong> is retained until you request deletion.</li>
+            <li><strong>Analytics data</strong> is retained according to Amplitude's data retention policies and is not linked to your coaching content.</li>
+        </ul>
+
+        <h2>6. Data Security</h2>
+        <p>We use industry-standard security measures including encrypted connections (TLS), secure authentication through Supabase, and access controls on stored data. No method of transmission or storage is 100% secure, but we take reasonable steps to protect your information.</p>
+
+        <h2>7. Your Rights & Choices</h2>
+        <ul>
+            <li><strong>Access & export:</strong> You can request a copy of your personal data.</li>
+            <li><strong>Deletion:</strong> You can request deletion of your account and associated data by contacting us.</li>
+            <li><strong>Opt out of analytics:</strong> You can disable analytics collection in the app settings.</li>
+            <li><strong>Cancel subscription:</strong> Manage your Prelume+ subscription through your Apple ID settings.</li>
+        </ul>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Prelume is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us so we can remove it.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the app or via email. Continued use of Prelume after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or want to exercise your data rights, contact us at:</p>
+        <div class="card">
+            <p><strong>Email:</strong> privacy@prelume.app</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Prelume. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

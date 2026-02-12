@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder's Edge - Prelume</title>
+    <style>
+        :root {
+            --bg: #F5F0EB;
+            --card-bg: #EDE7E0;
+            --accent: #B87B5E;
+            --text-primary: #3D3531;
+            --text-secondary: #8A7E77;
+            --divider: #DBD4CC;
+            --code-bg: #E6DFD7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #2C2725;
+                --card-bg: #3A3432;
+                --accent: #A8826E;
+                --text-primary: #E8E0DA;
+                --text-secondary: #9A8E87;
+                --divider: #4A4340;
+                --code-bg: #423B38;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100dvh;
+        }
+
+        .page {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 48px 20px 60px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .avatar {
+            font-size: 64px;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .coach-name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .coach-area {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+            border-radius: 6px;
+            padding: 3px 10px;
+        }
+
+        .description {
+            font-size: 17px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* Selling points */
+        .points {
+            margin: 36px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .point {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px 18px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .point-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            line-height: 1.3;
+        }
+
+        .point-text {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .point-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .point-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* CTA */
+        .cta-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--bg);
+            background: var(--accent);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .buy-btn:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        /* Code reveal */
+        .code-reveal {
+            display: none;
+            margin-top: 20px;
+            animation: slideUp 0.35s ease-out;
+        }
+
+        .code-reveal.visible {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .code-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--accent);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .code-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .code-value {
+            font-family: "SF Mono", "Menlo", "Consolas", monospace;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            margin-bottom: 14px;
+            user-select: all;
+            -webkit-user-select: all;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            background: var(--code-bg);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .copy-btn:active {
+            opacity: 0.7;
+        }
+
+        .copy-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Instructions */
+        .instructions {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .instructions p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .instructions .step {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .step-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--bg);
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .codes-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+
+        .codes-note code {
+            font-family: "SF Mono", "Menlo", "Consolas", monospace;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid var(--divider);
+            text-align: center;
+        }
+
+        .footer a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        .footer .brand {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="hero">
+            <div class="avatar">&#x1F680;</div>
+            <h1 class="coach-name">Founder's Edge</h1>
+            <div class="coach-area">Career</div>
+            <span class="badge">Paid Coach</span>
+            <p class="description">Battle-tested startup coaching &mdash; from idea validation to fundraising, hiring, and surviving the founder rollercoaster.</p>
+        </div>
+
+        <div class="points">
+            <div class="point">
+                <span class="point-icon">&#x1F9EA;</span>
+                <div class="point-text">
+                    <div class="point-title">Validate Before You Build</div>
+                    <div class="point-desc">Stress-test your idea with real frameworks like the Mom Test. Stop guessing, start talking to customers.</div>
+                </div>
+            </div>
+            <div class="point">
+                <span class="point-icon">&#x1F4B0;</span>
+                <div class="point-text">
+                    <div class="point-title">Fundraise With Clarity</div>
+                    <div class="point-desc">Nail your narrative and traction story. Answer "why you, why now" before investors ask.</div>
+                </div>
+            </div>
+            <div class="point">
+                <span class="point-icon">&#x1F525;</span>
+                <div class="point-text">
+                    <div class="point-title">No-BS Accountability</div>
+                    <div class="point-desc">Direct, tactical coaching that cuts through noise. Not advice &mdash; action. What are you doing this week?</div>
+                </div>
+            </div>
+            <div class="point">
+                <span class="point-icon">&#x1F9E0;</span>
+                <div class="point-text">
+                    <div class="point-title">Founder Mental Health</div>
+                    <div class="point-desc">A safe space to say "I don't know if I can keep doing this." Burnout, co-founder conflicts, pivots &mdash; all fair game.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <button class="buy-btn" id="buyBtn" onclick="revealCode()">Get Founder's Edge</button>
+
+            <div class="code-reveal" id="codeReveal">
+                <div class="code-card">
+                    <div class="code-label">Your redemption code</div>
+                    <div class="code-value" id="codeValue">SHIP-YARD</div>
+                    <button class="copy-btn" id="copyBtn" onclick="copyCode()">
+                        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        <span id="copyLabel">Copy code</span>
+                    </button>
+                </div>
+
+                <div class="instructions" style="margin-top: 24px;">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <span class="step-text">Open <strong>Prelume</strong> on your iPhone</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <span class="step-text">Find <strong>Founder's Edge</strong> and tap <strong>Unlock with code</strong></span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <span class="step-text">Paste the code above and start coaching</span>
+                    </div>
+                </div>
+
+                <div class="codes-note">
+                    Codes <code>SHIP-YARD-0000</code> through <code>SHIP-YARD-9999</code> are also valid.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="index.html">Privacy Policy</a>
+            <span class="brand">Prelume &copy; 2026</span>
+        </div>
+
+    </div>
+
+    <script>
+        function revealCode() {
+            const btn = document.getElementById('buyBtn');
+            const reveal = document.getElementById('codeReveal');
+            btn.style.display = 'none';
+            reveal.classList.add('visible');
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeValue').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const label = document.getElementById('copyLabel');
+                label.textContent = 'Copied!';
+                setTimeout(() => { label.textContent = 'Copy code'; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
